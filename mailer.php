@@ -55,10 +55,7 @@ class Mailer{
 	     		             'auth' => true,
 	     		             'username' => $this->apiKey,
 	     		             'password' => $this->secretKey));
-		     		             	
 
-		     		             	
-		     		             	
 		return $smtp->send($emails, $headers, $this->body );
 	}
 }
