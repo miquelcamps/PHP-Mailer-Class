@@ -41,6 +41,8 @@ class Mailer{
 
 		if( !class_exists('Mail') ) require 'Mail.php';
 		
+		if( $this->sender == 'mandrill' ) $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+		
 		$headers = array(
 			'From' => $this->name . ' <' . $this->from . '>',
 			'Subject' => $this->subject,
